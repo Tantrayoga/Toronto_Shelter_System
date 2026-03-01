@@ -5,7 +5,7 @@ We clean and aggregate the data, run exploratory Awareness analysis, build an oc
 
 ----------------------------------------------------------------
 
-##1) Dataset
+## 1) Dataset
 
 Source (CSV): public_services_dataset.csv hosted on GitHub (loaded via raw URL)
 
@@ -24,7 +24,7 @@ Main columns used:
 
 ----------------------------------------------------------------
 
-##2) Environment / Dependencies
+## 2) Environment / Dependencies
 
 Install (if missing):
 - pandas, numpy, scikit-learn, plotly
@@ -38,11 +38,11 @@ pip install pandas numpy scikit-learn plotly geopandas folium requests streamlit
 
 ----------------------------------------------------------------
 
-##3) Pipeline Overview
+## 3) Pipeline Overview
 
 We run two main blocks:
 
-A) First Analysis — Awareness
+### A) First Analysis — Awareness
 Goal: understand who / where / when / what drives high occupancy.
 
 Steps:
@@ -71,7 +71,7 @@ Outputs:
 
 ----------------------------------------------------------------
 
-B) Second Analysis — Spreadness
+### B) Second Analysis — Spreadness
 Goal: predict occupancy patterns and evaluate whether the model can support “load balancing” decisions.
 
 B1) Data Preparation
@@ -174,7 +174,7 @@ Permutation importance (MAE increase when feature is shuffled) to identify what 
 
 ----------------------------------------------------------------
 
-##4) Simulation / Prediction Output (Dec 31 → Jan 1)
+## 4) Simulation / Prediction Output (Dec 31 → Jan 1)
 
 We generate a 2-day table:
 - 2025-12-31: use actual occupancy rate from existing data
@@ -193,14 +193,14 @@ Output:
 
 ----------------------------------------------------------------
 
-##5) Notes / Known Limitations
+## 5) Notes / Known Limitations
 - The model uses only static IDs + calendar features, so it tends to predict a stable “typical” occupancy for each program/location.
 - Without lag/rolling time-series features, day-to-day fluctuations are hard to capture.
 - Occupancy is heavily skewed toward near-full; the model may look good overall but perform worse on rare “has-space” cases.
 
 ----------------------------------------------------------------
 
-##6) How to Run
+## 6) How to Run
 1) Run the notebook top-to-bottom:
 - Data load + cleaning
 - Awareness analysis charts (optional)
@@ -212,7 +212,7 @@ streamlit run app.py
 
 ----------------------------------------------------------------
 
-##7) Outputs Produced
+## 7) Outputs Produced
 - fsa_boundary_M_and_L4L.geojson (FSA boundaries for GTA)
 - fsa_2025.csv (aggregated occupancy by FSA/sector/capacity type)
 - app.py (Streamlit choropleth app)
