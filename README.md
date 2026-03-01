@@ -1,4 +1,4 @@
-#Toronto Shelter System — Public Services (Shelter Occupancy)
+# Toronto Shelter System — Public Services (Shelter Occupancy)
 
 A data analysis + prediction notebook for the Toronto shelter system public services dataset.
 We clean and aggregate the data, run exploratory Awareness analysis, build an occupancy-rate prediction model for Spreadness, evaluate it (including walk-forward validation + ranking metrics), and generate a small 2-day simulation (Dec 31, 2025 actuals → Jan 1, 2026 predictions).
