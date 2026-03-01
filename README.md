@@ -1,11 +1,11 @@
-Toronto Shelter System — Public Services (Shelter Occupancy)
+#Toronto Shelter System — Public Services (Shelter Occupancy)
 
 A data analysis + prediction notebook for the Toronto shelter system public services dataset.
 We clean and aggregate the data, run exploratory Awareness analysis, build an occupancy-rate prediction model for Spreadness, evaluate it (including walk-forward validation + ranking metrics), and generate a small 2-day simulation (Dec 31, 2025 actuals → Jan 1, 2026 predictions).
 
 ----------------------------------------------------------------
 
-1) Dataset
+##1) Dataset
 
 Source (CSV): public_services_dataset.csv hosted on GitHub (loaded via raw URL)
 
@@ -24,7 +24,7 @@ Main columns used:
 
 ----------------------------------------------------------------
 
-2) Environment / Dependencies
+##2) Environment / Dependencies
 
 Install (if missing):
 - pandas, numpy, scikit-learn, plotly
@@ -38,7 +38,7 @@ pip install pandas numpy scikit-learn plotly geopandas folium requests streamlit
 
 ----------------------------------------------------------------
 
-3) Pipeline Overview
+##3) Pipeline Overview
 
 We run two main blocks:
 
@@ -174,7 +174,7 @@ Permutation importance (MAE increase when feature is shuffled) to identify what 
 
 ----------------------------------------------------------------
 
-4) Simulation / Prediction Output (Dec 31 → Jan 1)
+##4) Simulation / Prediction Output (Dec 31 → Jan 1)
 
 We generate a 2-day table:
 - 2025-12-31: use actual occupancy rate from existing data
@@ -193,14 +193,14 @@ Output:
 
 ----------------------------------------------------------------
 
-5) Notes / Known Limitations
+##5) Notes / Known Limitations
 - The model uses only static IDs + calendar features, so it tends to predict a stable “typical” occupancy for each program/location.
 - Without lag/rolling time-series features, day-to-day fluctuations are hard to capture.
 - Occupancy is heavily skewed toward near-full; the model may look good overall but perform worse on rare “has-space” cases.
 
 ----------------------------------------------------------------
 
-6) How to Run
+##6) How to Run
 1) Run the notebook top-to-bottom:
 - Data load + cleaning
 - Awareness analysis charts (optional)
@@ -212,13 +212,10 @@ streamlit run app.py
 
 ----------------------------------------------------------------
 
-7) Outputs Produced
+##7) Outputs Produced
 - fsa_boundary_M_and_L4L.geojson (FSA boundaries for GTA)
 - fsa_2025.csv (aggregated occupancy by FSA/sector/capacity type)
 - app.py (Streamlit choropleth app)
 - predicted_occupancy_2026.csv (Dec 31 actual + Jan 1 predicted, paired rows only)
 
 ----------------------------------------------------------------
-
-8) Author / Team
-Datathon project — Toronto Shelter System analysis and occupancy prediction.
